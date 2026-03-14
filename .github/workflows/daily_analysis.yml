@@ -65,7 +65,7 @@ jobs:
           LITELLM_CONFIG: ${{ vars.LITELLM_CONFIG || secrets.LITELLM_CONFIG }}
           LITELLM_CONFIG_YAML: ${{ vars.LITELLM_CONFIG_YAML || secrets.LITELLM_CONFIG_YAML }}
           LITELLM_API_KEY: ${{ secrets.LITELLM_API_KEY }}
-          LITELLM_MODEL: ${{ vars.LITELLM_MODEL || secrets.LITELLM_MODEL }}
+        
 
           # Gemini AI（主选）
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
@@ -76,10 +76,10 @@ jobs:
           # AIHubMix（优先于 OPENAI_API_KEY，自动适配 base_url，推荐国内用户）
           AIHUBMIX_KEY: ${{ secrets.AIHUBMIX_KEY }}
 
-          # OpenAI 兼容 API（备选）
-          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-          OPENAI_BASE_URL: ${{ vars.OPENAI_BASE_URL || secrets.OPENAI_BASE_URL }}
-          OPENAI_MODEL: ${{ vars.OPENAI_MODEL || secrets.OPENAI_MODEL }}
+          # 阿里云 通义千问（DashScope）
+          DASHSCOPE_API_KEY: ${{ secrets.DASHSCOPE_API_KEY }}
+          LITELLM_MODEL: dashscope/qwen-turbo
+          # 或者用 dashscope/qwen-plus / dashscope/qwen-max
 
           # Anthropic / Claude
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
