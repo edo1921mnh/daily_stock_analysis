@@ -50,10 +50,10 @@ jobs:
       - name: 安装依赖
         run: |
           python -m pip install --upgrade pip
-          # 安装指定版本 litellm + 用官方 PyPI 源（解决找不到包的问题）
-          pip install litellm==1.81.13 --index-url https://pypi.org/simple/ --trusted-host pypi.org
-          # 再安装其他依赖（如 requests、akshare 等）
-          pip install requests akshare tushare baostock pandas
+          python -m pip cache purge
+          pip install litellm --index-url https://pypi.tuna.tsinghua.edu.cn/simple/ --trusted-host pypi.tuna.tsinghua.edu.cn
+          pip install requests akshare tushare baostock pandas --index-url https://pypi.tuna.tsinghua.edu.cn/simple/ --trusted-host pypi.tuna.tsinghua.edu.cn
+
       
       - name: 创建必要目录
         run: |
